@@ -26,7 +26,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function SearchFilterContainer(props) {
-    // console.log('props:', props)
     const classes = useStyles();
       const flatProps = {
         options: props.autodata.map(option => option.name),

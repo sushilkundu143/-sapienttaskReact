@@ -48,7 +48,6 @@ class App extends React.Component {
         })
     }
     namefilter = (name) => {
-        console.log('app compnent name filter:', name)
         this.setState(prevState => {
             return {
                 datas: name
@@ -84,13 +83,10 @@ class App extends React.Component {
                         : _.filter(this.state.rowdata, {'origin': filter})
                 filterdataresult.push(...data)
             }
-            console.log('selectedfilters:', selectedfilters)
             if(selectedfilters.length <= 0) {
                 filterdataresult = this.state.rowdata
             }
-            console.log('new filter data:', filterdataresult)
             filterdataresult = _.uniqBy(filterdataresult, 'id')
-            console.log('unique filter result:', filterdataresult)
             this.setState(prevState => {
                 return {
                     datas: filterdataresult
